@@ -18,9 +18,6 @@
     --branco:#fff ;
 }
 
-.dark {
-    --cor-padrao: red;
-}
 
 body {
     font-family: 'Open Sans', sans-serif;

@@ -1,0 +1,54 @@
+:root {
+    --cor-fundo: #cde8e7 ;
+    --cor-fundo-pastel: #c7e9da;
+
+    --cor-padrao: #04b4ae;
+    --cor-escuro: #007470;
+    
+    --cor-escuro-footer: #5b9279;
+    
+    --branco:#fff ;
+}
+
+aside {
+    height: 100vh;
+    width: 15%;
+    background-color: var(--cor-padrao);
+    color: var(--branco);
+}
+
+.sidebar{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 100px ;
+}
+
+.sidebar a {
+    color: var(--branco);
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    background-color: var(--cor-escuro);
+    color: var(--branco);
+}
+
+.sidebar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
