@@ -46,21 +46,21 @@
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="far fa-user "></i>
-                        <input type="text" placeholder="Name" required>
+                        <input type="text" placeholder="Name" required id ="nome">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-envelope"></i>
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" placeholder="Email" required id ="email">
                     </label>
                     <label class="label-input" for="">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Senha" required>
+                        <input type="password" placeholder="Senha" required id ="senha">
                     </label>
                     <!-- CPF -->
                     <label class="label-input" for="cpf-input">
                         <i class="far fa-id-card"></i>
                         <input type="text" id="cpf-input" placeholder="CPF" maxlength="14" oninput="formatarCPF(this)"
-                            required>
+                            required id ="cpf">
                     </label>
 
                     <script>
@@ -88,29 +88,73 @@
                         }
                     </script>
                     <label class="label-input" for="">
+                        <i class="fas fa-map-marker"></i>
+                        <input type="text" placeholder="dataNascimento" required id ="dataNascimento">
+                    </label>
+                    <label class="label-input" for="">
                         <i class="fas fa-building"></i>
-                        <input type="text" placeholder="Cidade" required>
+                        <input type="text" placeholder="Cidade" required id ="cidade">
                     </label>
                     <label class="label-input" for="">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Estado" required>
+                        <input type="text" placeholder="Estado" required id ="estado">
                     </label>
                     <label class="label-input" for="">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Endereço" required>
+                        <input type="text" placeholder="Endereço" required id ="endereco">
                     </label>
                     <label class="label-input" for="">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="CEP" required>
+                        <input type="text" placeholder="CEP" required id ="cep">
                     </label>
                     <label class="label-input" for="">
                         <i class="fas fa-phone"></i>
                         <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone"
-                            oninput="formatarTelefone(this)" required>
+                         required id ="telefone">
                     </label>
 
                 </form>
-                <a href="#"> <button class="btn btn-second">Criar conta</button></a>
+                <a href="#"> <button class="btn btn-second" id="btn-criar-conta">Criar conta</button></a>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+                <script>
+                    document.getElementById('btn-criar-conta').addEventListener('click', async () => {
+                        try {
+                            const nome = document.getElementById('nome').value;
+                            const email = document.getElementById('email').value;
+                            const senha = document.getElementById('senha').value;
+                            const cpf = document.getElementById('cpf-input').value;
+                            const telefone = document.getElementById('telefone').value;
+                            const endereco = document.getElementById('endereco').value;
+                            const cidade = document.getElementById('cidade').value;
+                            const estado = document.getElementById('estado').value;
+                            const cep = document.getElementById('cep').value;
+                            const dataNascimento = document.getElementById('dataNascimento').value;
+            
+                            const res = await axios.post('https://cool-wind-5935.fly.dev/usuarios', {
+                                nome,
+                                email,
+                                senha,
+                                cpf,
+                                telefone,
+                                endereco,
+                                cidade,
+                                estado,
+                                cep,
+                                dataNascimento,
+                            });
+            
+                            if (res.status === 201) {
+                                //TODO Melhorar esse alerta ou deletar 
+                                alert('Usuário criado com sucesso!');
+                            } else {
+                                // TODO Melhorar esse alerta ou deletar
+                                alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
+                            }
+                        } catch (error) {
+                            console.error('Erro ao criar usuário:', error);
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
