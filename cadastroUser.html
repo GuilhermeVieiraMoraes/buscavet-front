@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="css/cadastroUser.css">
+    <link rel="stylesheet" href="css/responsividade.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
@@ -23,17 +24,17 @@
                 <h2 class="title title-second">Criar uma conta para Usuário</h2>
                 <div class="social-media">
                     <ul class="list-social-media">
-                        <a class="link-social-media" href="#">
+                        <a class="link-social-media" href="novoHome.html">
                             <li class="item-social-media">
                                 <i class="fab fa-facebook-f"></i>
                             </li>
                         </a>
-                        <a class="link-social-media" href="#">
+                        <a class="link-social-media" href="novoHome.html">
                             <li class="item-social-media">
                                 <i class="fab fa-google-plus-g"></i>
                             </li>
                         </a>
-                        <a class="link-social-media" href="#">
+                        <a class="link-social-media" href="novoHome.html">
                             <li class="item-social-media">
                                 <i class="fab fa-linkedin-in"></i>
                             </li>
@@ -113,10 +114,10 @@
                     </label>
 
                 </form>
-                <a href="#"> <button class="btn btn-second" id="btn-criar-conta">Criar conta</button></a>
+                <a href="novoHome.html"> <button class="btn btn-second" id="btn-criar-conta">Criar conta</button></a>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
                 <script>
-                    document.getElementById('btn-criar-conta').addEventListener('click', async () => {
+                    document.getElementById('btn-criar-conta').addEventListener('click', async() => {
                         try {
                             const nome = document.getElementById('nome').value;
                             const email = document.getElementById('email').value;
@@ -128,7 +129,7 @@
                             const estado = document.getElementById('estado').value;
                             const cep = document.getElementById('cep').value;
                             const dataNascimento = document.getElementById('dataNascimento').value;
-            
+
                             const res = await axios.post('http://localhost:4000/usuarios', {
                                 nome,
                                 email,
@@ -141,7 +142,7 @@
                                 cep,
                                 dataNascimento,
                             });
-            
+
                             if (res.status === 201) {
                                 //TODO Melhorar esse alerta ou deletar
                                 window.location.href = 'novoHome.html';
