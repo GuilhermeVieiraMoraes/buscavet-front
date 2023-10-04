@@ -4,6 +4,7 @@
 
     --cor-padrao: #04b4ae;
     --cor-escuro: #007470;
+    --cor-letra: black;
     
     --cor-escuro-footer: #5b9279;
     
@@ -76,6 +77,15 @@ aside {
 
 .main-content {
     width: 100%;
+    font-size: 1rem;
+}
+
+.main-content a {
+    text-decoration: none;
+}
+
+.main-content a:hover {
+    text-decoration: none;
 }
 
 .main .card {
@@ -100,4 +110,70 @@ aside {
     min-height: 100px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/*----  Butão Add Pet   ----*/
+
+.btn-add{
+    background-color: var(--cor-padrao);
+    height: 6rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    
+}
+
+.btn-add:hover{
+    background-color: var(--cor-escuro);
+}
+
+.btn-add p {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.btn-circulo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: var(--branco);
+    background-color: rgb(221, 221, 2);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+}
+
+/*----  Painel de Gerenciamento de Pet  ----*/
+
+.painel-pet{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 8rem 8rem;
+    padding: 1rem;
+    width: 90%;
+}
+
+.painel-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--cor-letra);
+    text-decoration: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.painel-btn:hover {
+    color: var(--cor-letra);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.painel-pad{
+
 }
