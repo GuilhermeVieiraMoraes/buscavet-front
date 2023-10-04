@@ -24,6 +24,15 @@
 }
 
 
+/* Normal desktop :1366px. */
+
+@media (min-width: 1366px) and (max-width: 768px) {
+    .container {
+        width: 75%;
+    }
+}
+
+
 /* Normal desktop :992px. */
 
 @media (min-width: 992px) and (max-width: 1200px) {
