@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <link rel="stylesheet" href="css/CadastroUser.css">
+    <link rel="stylesheet" href="css/cadastroUser.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
@@ -14,10 +14,9 @@
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
-                <h2 class="title title-primary">Seja Bem vindo</h2>
                 <p class="description description-primary">Se você já tiver cadastro </p>
-                <p class="description description-primary">Em nosso site, clique em "Login"</p>
-                <a href="login.html"><button id="signin" class="btn btn-primary">Login</button> </a>
+                <p class="description description-primary">em nosso site, clique em "Entrar"</p>
+                <a href="login.html"><button id="signin" class="btn btn-primary">Entrar</button> </a>
             </div>
             <div class="second-column">
                 <img src="img/logo.png" width="250">
@@ -44,23 +43,23 @@
                 <!-- social media -->
                 <p class="description description-second">ou use seu e-mail para se registrar:</p>
                 <form class="form">
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="far fa-user "></i>
-                        <input type="text" placeholder="Name" required id ="nome">
+                        <input type="text" placeholder="Name" required id="nome">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="far fa-envelope"></i>
-                        <input type="email" placeholder="Email" required id ="email">
+                        <input type="email" placeholder="Email" required id="email">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Senha" required id ="senha">
+                        <input type="password" placeholder="Senha" required id="senha">
                     </label>
                     <!-- CPF -->
                     <label class="label-input" for="cpf-input">
                         <i class="far fa-id-card"></i>
                         <input type="text" id="cpf-input" placeholder="CPF" maxlength="14" oninput="formatarCPF(this)"
-                            required id ="cpf">
+                            required id="cpf">
                     </label>
 
                     <script>
@@ -87,30 +86,30 @@
                             cpfInput.value = cpf;
                         }
                     </script>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="dataNascimento" required id ="dataNascimento">
+                        <input type="date" placeholder="dataNascimento" required id="dataNascimento">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-building"></i>
-                        <input type="text" placeholder="Cidade" required id ="cidade">
+                        <input type="text" placeholder="Cidade" required id="cidade">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Estado" required id ="estado">
+                        <input type="text" placeholder="Estado" required id="estado">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Endereço" required id ="endereco">
+                        <input type="text" placeholder="Endereço" required id="endereco">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="CEP" required id ="cep">
+                        <input type="text" placeholder="CEP" required id="cep">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-phone"></i>
                         <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone"
-                         required id ="telefone">
+                         required id="telefone">
                     </label>
 
                 </form>
@@ -130,7 +129,7 @@
                             const cep = document.getElementById('cep').value;
                             const dataNascimento = document.getElementById('dataNascimento').value;
             
-                            const res = await axios.post('https://cool-wind-5935.fly.dev/usuarios', {
+                            const res = await axios.post('http://localhost:4000/usuarios', {
                                 nome,
                                 email,
                                 senha,
@@ -144,14 +143,14 @@
                             });
             
                             if (res.status === 201) {
-                                //TODO Melhorar esse alerta ou deletar 
-                                alert('Usuário criado com sucesso!');
+                                //TODO Melhorar esse alerta ou deletar
+                                window.location.href = 'novoHome.html';
                             } else {
                                 // TODO Melhorar esse alerta ou deletar
                                 alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
                             }
                         } catch (error) {
-                            console.error('Erro ao criar usuário:', error);
+                            alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
                         }
                     });
                 </script>

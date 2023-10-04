@@ -15,12 +15,11 @@
         <div class="content first-content">
             <div class="first-column">
                 <h2 class="title title-primary">Seja Bem vindo</h2>
-                <p class="description description-primary">Se você já tiver cadastro </p>
-                <p class="description description-primary">Em nosso site, clique em "Não tem conta? Cadastre Agora!"</p>
-                <a href="CadastroUser.html"><button id="signin" class="btn btn-primary">Criar conta</button> </a>
-                <p class="description description-primary">Você é Veterinário e não tem conta?"Crie uma conta Veterinário"</p>
+                <p class="description description-primary">Não tem conta? Cadastre Agora!</p>
+                <a href="cadastroUser.html"><button id="signin" class="btn btn-primary">Criar conta</button> </a>
+                <p class="description description-primary">Você é Veterinário e não tem conta?</p>
 
-                <a href="CadastroVet.html"><button id="signin" class="btn btn-primary">Criar conta Veterinário</button> </a>
+                <a href="cadastroVet.html"><button id="signin" class="btn btn-primary">Criar conta Veterinário</button> </a>
             </div>
             <div class="second-column">
                 <img src="img/logo.png" width="250">
@@ -47,18 +46,43 @@
                 <!-- social media -->
                 <p class="description description-second">ou use seu e-mail para se registrar:</p>
                 <form class="form">
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" placeholder="Email" id ="email">
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" id ="senha">
                     </label>
-                    <button class="btn btn-second">Entrar</button>
                 </form>
-                <p class="description description-second">Esqeuceu a senha?</p>
+                <a href="#"> <button class="btn btn-second" id="btn-entrar">Entrar</button></a>
+                <p class="description description-second">Esqueceu a senha?</p>
                 <a href="#"> <button class="btn btn-second">Recuperar senha</button></a>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+                <script>
+                    document.getElementById('btn-entrar').addEventListener('click', async () => {
+                        try {
+                            const email = document.getElementById('email').value;
+                            const senha = document.getElementById('senha').value;
+
+                            const res = await axios.post('http://localhost:4000/usuarios/login', {
+                                email,
+                                senha,
+                            });
+            
+                            if (res.status === 200) {
+                                //TODO Melhorar esse alerta ou deletar
+                                window.location.href = 'novoHome.html';
+                                //window.location.href = 'novoHome.html';
+                            } else {
+                                // TODO Melhorar esse alerta ou deletar
+                                alert('Erro no Email/Password. Verifique seus dados e tente novamente.');
+                            }
+                        } catch (error) {
+                            alert('Erro no Email/Password. Verifique seus dados e tente novamente.');
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
