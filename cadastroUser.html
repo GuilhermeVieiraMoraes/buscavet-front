@@ -89,71 +89,80 @@
                     </script>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="dataNascimento" required id="dataNascimento">
+                        <input type="text" placeholder="dataNascimento" id="dataNascimento">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-building"></i>
-                        <input type="text" placeholder="Cidade" required id="cidade">
+                        <input type="text" placeholder="Cidade" id="cidade">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Estado" required id="estado">
+                        <input type="text" placeholder="Estado" id="estado">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Endereço" required id="endereco">
+                        <input type="text" placeholder="Endereço" id="endereco">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="CEP" required id="cep">
+                        <input type="text" placeholder="CEP" id="cep">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-phone"></i>
                         <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone"
-                         required id="telefone">
+                        id="telefone">
                     </label>
 
                 </form>
                 <a href="#"> <button class="btn btn-second" id="btn-criar-conta">Criar conta</button></a>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
                 <script>
-                    document.getElementById('btn-criar-conta').addEventListener('click', async () => {
-                        try {
-                            const nome = document.getElementById('nome').value;
-                            const email = document.getElementById('email').value;
-                            const senha = document.getElementById('senha').value;
-                            const cpf = document.getElementById('cpf-input').value;
-                            const telefone = document.getElementById('telefone').value;
-                            const endereco = document.getElementById('endereco').value;
-                            const cidade = document.getElementById('cidade').value;
-                            const estado = document.getElementById('estado').value;
-                            const cep = document.getElementById('cep').value;
-                            const dataNascimento = document.getElementById('dataNascimento').value;
-            
-                            const res = await axios.post('http://localhost:4000/usuarios', {
-                                nome,
-                                email,
-                                senha,
-                                cpf,
-                                telefone,
-                                endereco,
-                                cidade,
-                                estado,
-                                cep,
-                                dataNascimento,
-                            });
-            
-                            if (res.status === 201) {
-                                //TODO Melhorar esse alerta ou deletar
-                                window.location.href = 'index.html';
-                            } else {
-                                // TODO Melhorar esse alerta ou deletar
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('btn-criar-conta').addEventListener('click', async () => {
+                            try {
+                                const nome = document.getElementById('nome').value;
+                                const email = document.getElementById('email').value;
+                                const senha = document.getElementById('senha').value;
+                                const cpf = document.getElementById('cpf-input').value;
+                                const telefone = document.getElementById('telefone').value;
+                                const endereco = document.getElementById('endereco').value;
+                                const cidade = document.getElementById('cidade').value;
+                                const estado = document.getElementById('estado').value;
+                                const cep = document.getElementById('cep').value;
+                                const dataNascimento = document.getElementById('dataNascimento').value;
+                        
+                                const requestOptions = {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({
+                                        nome,
+                                        email,
+                                        senha,
+                                        cpf,
+                                        telefone,
+                                        endereco,
+                                        cidade,
+                                        estado,
+                                        cep,
+                                        dataNascimento,
+                                    }),
+                                };
+                        
+                                const res = await fetch('http://localhost:4000/usuarios', requestOptions);
+                        
+                                if (res.status === 201) {
+                                    // TODO: Melhorar esse alerta ou fazer alguma ação após o sucesso
+                                    alert('Cadastrado com sucesso')
+                                } else {
+                                    // TODO: Melhorar esse alerta ou fazer alguma ação em caso de erro
+                                    alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
+                                }
+                            } catch (error) {
                                 alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
                             }
-                        } catch (error) {
-                            alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
-                        }
-                    });
+                        });
+                    })
                 </script>
             </div>
         </div>
