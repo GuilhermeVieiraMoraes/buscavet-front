@@ -2,10 +2,14 @@
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 9%;
     color: #5b9279;
     
-  } 
+  }
+  .navbar {
+    width: 100%;
+    box-shadow: 0 4px 2px -2px gray;
+  }
   
   p {
     font-size: 18px;
