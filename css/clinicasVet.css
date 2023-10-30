@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+
 .container2 {
     width: 80%;
     margin: 0 auto;
     text-align: center;
+  }
+
+  .navbar {
+    width: 100%;
+    box-shadow: 0 4px 2px -2px gray;
   }
   
   .search-container {
@@ -34,6 +41,7 @@
   }
   
   .filter-container {
+    padding-top: 5%;
     margin-bottom: 20px;
   }
   

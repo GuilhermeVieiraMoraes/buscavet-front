@@ -8,6 +8,12 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/loginUser.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script>
+        const token = localStorage.getItem('token');
+        if (token) {
+            window.location.href = 'infoUser.html';
+        }
+    </script>
 </head>
 
 <body>
@@ -61,43 +67,11 @@
                 <p class="description description-second">Esqueceu a senha?</p>
                 <a href="#"> <button class="btn btn-second">Recuperar senha</button></a>
                 <div id="error-message" class="error-message"></div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        document.getElementById('btn-entrar').addEventListener('click', async () => {
-                            try {
-                                const email = document.getElementById('email').value;
-                                const senha = document.getElementById('senha').value;
-
-                                const requestOptions = {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                    },
-                                    body: JSON.stringify({
-                                        email,
-                                        senha,
-                                    }),
-                                };
-                                const res = await fetch('http://localhost:4000/usuarios/login', requestOptions);
-                                
-                                if (res.status === 200) {
-                                    const data = await res.json();
-                                    const token = data.token;
-                                    localStorage.setItem('token', token);
-                                    window.location.href = 'infoUser.html'
-                                } else {
-                                    document.getElementById('error-message').textContent = 'Email ou Senha incorreto(s)';
-                                }
-                            }
-                            catch (error) {
-                                document.getElementById('error-message').textContent = 'Erro ao fazer login';
-                            }
-                        })
-                    })
-                </script>
             </div>
         </div>
     </div>
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>
