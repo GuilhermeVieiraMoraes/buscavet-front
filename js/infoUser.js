@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('user-cidade').innerText = usuario.cidade;
                     document.getElementById('user-estado').innerText = usuario.estado;
                     document.getElementById('user-cep').innerText = usuario.cep;
+                    document.getElementById('user-complemento').innerText = usuario.complemento;
+                    document.getElementById('user-numero').innerText = usuario.numero;
                 }
             })
             .catch(error => {
