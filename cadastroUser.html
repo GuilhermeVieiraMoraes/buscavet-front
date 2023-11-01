@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="css/cadastroUser.css">
-    <link rel="stylesheet" href="css/responsividade.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
@@ -15,26 +14,28 @@
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
+                <h2 class="title title-primary">Seja Bem vindo</h2>
                 <p class="description description-primary">Se você já tiver cadastro </p>
-                <p class="description description-primary">em nosso site, clique em "Entrar"</p>
-                <a href="login.html"><button id="signin" class="btn btn-primary">Entrar</button> </a>
+                <p class="description description-primary">Em nosso site, clique em "Login"</p>
+                <a href="login.html"><button id="signin" class="btn btn-primary">Login</button> </a>
             </div>
             <div class="second-column">
-                <img src="img/logo.png" width="250">
+                <a class="navbar-brand" href="index.html"> <img src="img/logo.png" width="250">
+                </a>
                 <h2 class="title title-second">Criar uma conta para Usuário</h2>
                 <div class="social-media">
                     <ul class="list-social-media">
-                        <a class="link-social-media" href="novoHome.html">
+                        <a class="link-social-media" href="#">
                             <li class="item-social-media">
                                 <i class="fab fa-facebook-f"></i>
                             </li>
                         </a>
-                        <a class="link-social-media" href="novoHome.html">
+                        <a class="link-social-media" href="#">
                             <li class="item-social-media">
                                 <i class="fab fa-google-plus-g"></i>
                             </li>
                         </a>
-                        <a class="link-social-media" href="novoHome.html">
+                        <a class="link-social-media" href="#">
                             <li class="item-social-media">
                                 <i class="fab fa-linkedin-in"></i>
                             </li>
@@ -89,75 +90,44 @@
                     </script>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="date" placeholder="dataNascimento" required id="dataNascimento">
+                        <input type="text" placeholder="dataNascimento" id="dataNascimento">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-building"></i>
-                        <input type="text" placeholder="Cidade" required id="cidade">
+                        <input type="text" placeholder="Cidade" id="cidade">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Estado" required id="estado">
+                        <input type="text" placeholder="Estado" id="estado">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="Endereço" required id="endereco">
+                        <input type="text" placeholder="Endereço" id="endereco">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-map-marker"></i>
-                        <input type="text" placeholder="CEP" required id="cep">
+                        <input type="text" placeholder="CEP" id="cep">
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-map-marker"></i>
+                        <input type="text" placeholder="Numero" id="numero">
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-map-marker"></i>
+                        <input type="text" placeholder="Complemento" id="complemento">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-phone"></i>
                         <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone"
-                         required id="telefone">
+                        id="telefone">
                     </label>
 
                 </form>
-                <a href="novoHome.html"> <button class="btn btn-second" id="btn-criar-conta">Criar conta</button></a>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-                <script>
-                    document.getElementById('btn-criar-conta').addEventListener('click', async() => {
-                        try {
-                            const nome = document.getElementById('nome').value;
-                            const email = document.getElementById('email').value;
-                            const senha = document.getElementById('senha').value;
-                            const cpf = document.getElementById('cpf-input').value;
-                            const telefone = document.getElementById('telefone').value;
-                            const endereco = document.getElementById('endereco').value;
-                            const cidade = document.getElementById('cidade').value;
-                            const estado = document.getElementById('estado').value;
-                            const cep = document.getElementById('cep').value;
-                            const dataNascimento = document.getElementById('dataNascimento').value;
-
-                            const res = await axios.post('http://localhost:4000/usuarios', {
-                                nome,
-                                email,
-                                senha,
-                                cpf,
-                                telefone,
-                                endereco,
-                                cidade,
-                                estado,
-                                cep,
-                                dataNascimento,
-                            });
-
-                            if (res.status === 201) {
-                                //TODO Melhorar esse alerta ou deletar
-                                window.location.href = 'novoHome.html';
-                            } else {
-                                // TODO Melhorar esse alerta ou deletar
-                                alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
-                            }
-                        } catch (error) {
-                            alert('Erro ao criar usuário. Verifique seus dados e tente novamente.');
-                        }
-                    });
-                </script>
+                <a href="#"> <button class="btn btn-second" id="btn-criar-conta">Criar conta</button></a>
             </div>
         </div>
     </div>
+    <script src="/js/cadastroUser.js"></script>
 </body>
 
 </html>

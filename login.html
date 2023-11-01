@@ -7,86 +7,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="css/loginUser.css">
-    <link rel="stylesheet" href="css/responsividade.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script>
+        const token = localStorage.getItem('token');
+        if (token) {
+            window.location.href = 'infoUser.html';
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
-                <h2 class="title title-primary">Seja Bem vindo</h2>
-                <p class="description description-primary">Não tem conta? Cadastre Agora!</p>
-                <a href="cadastroUser.html"><button id="signin" class="btn btn-primary">Criar conta</button> </a>
-                <p class="description description-primary">Você é Veterinário e não tem conta?</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2 class="title title-primary">Seja Bem Vindo!</h2>
+                <p class="description description-primary">Caso não possua um cadastro no nosso site</p>
+                <p class="description description-primary">Aperte abaixo para criar uma conta de usuário"</p>
+                <a href="cadastroUser.html"><button id="signin" class="input-button">Criar Conta Usuário</button> </a>
+                <p class="description description-primary">Você é Veterinário e não tem conta?"Crie uma conta Veterinário"
+                </p>
+                <p class="description description-primary">Abaixo para criar uma conta de veterinário"</p>
+                <a href="cadastroVet.html"><button id="signin" class="input-button">Resgistrar Veterinário</button> </a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
-                <a href="cadastroVet.html"><button id="signin" class="btn btn-primary">Criar conta Veterinário</button> </a>
-            </div>
-            <div class="second-column">
-                <img src="img/logo.png" width="250">
-                <h2 class="title title-second">Faça seu login aqui</h2>
-                <div class="social-media">
-                    <ul class="list-social-media">
-                        <a class="link-social-media" href="novoHome.html">
-                            <li class="item-social-media">
-                                <i class="fab fa-facebook-f"></i>
-                            </li>
-                        </a>
-                        <a class="link-social-media" href="novoHome.html">
-                            <li class="item-social-media">
-                                <i class="fab fa-google-plus-g"></i>
-                            </li>
-                        </a>
-                        <a class="link-social-media" href="novoHome.html">
-                            <li class="item-social-media">
-                                <i class="fab fa-linkedin-in"></i>
-                            </li>
-                        </a>
-                    </ul>
+                <br>
+                <div class="content-footer">
+                    <p>© 2023 BuscaVet. Todos os direitos reservados.</p>
+
                 </div>
-                <!-- social media -->
-                <p class="description description-second">ou use seu e-mail para se registrar:</p>
+
+            </div>
+
+            <div class="second-column">
+                <a class="navbar-brand" href="index.html"> <img src="img/logo.png" width="250">
+                </a>
+                <br>
+                <h2 class="title title-second">Faça seu Login aqui</h2>
+                <br>
                 <form class="form">
                     <label class="label-input">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email" id ="email">
+                        <input type="email" placeholder="Email" required id="email">
                     </label>
                     <label class="label-input">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password" id ="senha">
+                        <input type="password" placeholder="Password" required id="senha">
                     </label>
                 </form>
-                <a href="novoHome.html"> <button class="btn btn-second" id="btn-entrar">Entrar</button></a>
-                <p class="description description-second">Esqueceu a senha?</p>
-                <a href="novoHome.html"> <button class="btn btn-second">Recuperar senha</button></a>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-                <script>
-                    document.getElementById('btn-entrar').addEventListener('click', async() => {
-                        try {
-                            const email = document.getElementById('email').value;
-                            const senha = document.getElementById('senha').value;
-
-                            const res = await axios.post('http://localhost:4000/usuarios/login', {
-                                email,
-                                senha,
-                            });
-
-                            if (res.status === 200) {
-                                //TODO Melhorar esse alerta ou deletar
-                                window.location.href = 'novoHome.html';
-                                //window.location.href = 'novoHome.html';
-                            } else {
-                                // TODO Melhorar esse alerta ou deletar
-                                alert('Erro no Email/Password. Verifique seus dados e tente novamente.');
-                            }
-                        } catch (error) {
-                            alert('Erro no Email/Password. Verifique seus dados e tente novamente.');
-                        }
-                    });
-                </script>
+                <div id="error-message" class="error-message"></div>
+                <button class="input-button2">Entrar</button>
+                <div id="error-message" class="error-message"></div>
             </div>
         </div>
     </div>
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>
