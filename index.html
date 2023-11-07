@@ -8,40 +8,46 @@
     <title>Busca Vet</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/e980210ddd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
         <nav class="navbar fixed-top navbar-expand-lg navbar-light nav-style">
-            <a class="navbar-brand" href="#"> <img src="img/logo.png" width="250">
+            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" width="250">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+                aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse justify-content-end nav-options " id="conteudoNavbarSuportado">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
 
-                        <a class="nav-link" href="index.html"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Home <span
-                class="sr-only">(página atual)</span></a>
+                        <a class="nav-link" href="index.html"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Home
+                            <span class="sr-only">(página atual)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="clinicasVet.html"><i class="fa fa-fw fa-medkit" aria-hidden="true"></i>Clinicas/Vet</a>
+                        <a class="nav-link" href="clinicasVet.html"><i class="fa fa-fw fa-medkit"
+                                aria-hidden="true"></i>Clinicas/Vet</a>
                     </li>
                     <li class="nav-item">
-
-                        <a class="nav-link" href="quemsomos.html"><i class="fa fa-fw fa-paw" aria-hidden="true"></i>Quem Somos?</a>
+                        <a class="nav-link" href="quemsomos.html"><i class="fa fa-fw fa-paw" aria-hidden="true"></i>Quem
+                            Somos?</a>
                     </li>
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="infoUser.html"><i class="fa fa-fw fa-paw" aria-hidden="true"></i>Minha conta</a>
+                    <li class="nav-item" id="minhaConta-menu-item">
+                        <a class="nav-link" href="infoUser.html"><i class="fa fa-fw fa-paw" aria-hidden="true"></i>Minha
+                            conta</a>
+                    </li>
                     </li>
                     <li class="nav-item" id="login-menu-item">
-                        <a class="nav-link" href="login.html"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Login</a>
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-right-from-bracket"
+                                aria-hidden="true"></i> Login</a>
                     </li>
                 </ul>
             </div>
@@ -55,11 +61,11 @@
                     <div class="form-group col-3">
                         <label for="cidade-search" class="sr-only">Cidade</label>
                         <select class="form-control " id="cidade-search">
-                          <option>Aracaju</option>
-                          <option>São Paulo</option>
-                          <option>Rio de Janeiro</option>
-                          <option>Brasília</option>
-                          <option>Recife</option>
+                            <option>Aracaju</option>
+                            <option>São Paulo</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Brasília</option>
+                            <option>Recife</option>
                         </select>
                     </div>
                     <div class="form-group col-7">
@@ -67,7 +73,8 @@
                         <input type="text" class="form-control" id="vet-search" placeholder="Encontrar parceiro...">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-warning mb-2"><i class="fas fa-search"></i> Pesquisar</button>
+                        <button type="submit" class="btn btn-warning mb-2"><i class="fas fa-search"></i>
+                            Pesquisar</button>
                     </div>
                 </form>
             </div>
@@ -99,7 +106,7 @@
                     </ul>
             </div>
         </footer>
-    <script src="/js/logout.js"></script>
+        <script src="/js/logout.js"></script>
 </body>
 
 </html>
