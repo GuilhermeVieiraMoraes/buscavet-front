@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Busca Vet - Perfil</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/infoUser.css" />
+    <link rel="stylesheet" href="css/responsividade.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/e980210ddd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light nav-style">
+            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" width="250">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+                aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end nav-options" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Home
+                            <span class="sr-only">(página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clinicasVet.html"><i class="fa fa-fw fa-medkit"
+                                aria-hidden="true"></i>Clinicas/Vet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quemsomos.html"><i class="fa fa-fw fa-paw" aria-hidden="true"></i>Quem
+                            Somos?</a>
+                    </li>
+                    <li class="nav-item" id="minhaConta-menu-item">
+                        <a class="nav-link" href="infoUser.html"><i class="fa fa-fw fa-paw" aria-hidden="true"></i>Minha
+                            conta</a>
+                    </li>
+                    <li class="nav-item" id="login-menu-item">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-right-from-bracket"
+                                aria-hidden="true"></i>
+                            Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <aside>
+            <nav class="sidebar vet-sidebar">
+                <ul>
+                    <li><a href="infoUser.html">Informações Pessoais</a></li>
+                    <li><a href="meusPets.html">Meus Pets</a></li>
+                    <li><a href="">Agendamento</a></li>
+                    <li><a href="">Histórico</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <div class="main-content">
+                <div class="card w-90">
+                    <div class="card-body">
+                        <h5 class="card-title">Informações básicas</h5>
+                        <p class="card-text">
+                            Algumas informações podem estar visíveis para outras pessoas
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="tag-lista">Foto de perfil</div>
+                            <p>Uma foto te ajuda a te identificar na plataforma</p>
+                            <img src="img/medVet1.png" alt="" class="user-img" />
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="tag-lista">Nome</div>
+                            <p><span id="user-name"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="tag-lista">Data de nascimento</div>
+                            <p><span id="user-dataNascimento"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card w-90">
+                    <div class="card-body">
+                        <h5 class="card-title">Informações de contato</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="tag-lista">Email</div>
+                            <p><span id="user-email"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="tag-lista">Celular/Telefone</div>
+                            <p><span id="user-telefone"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card w-90">
+                    <div class="card-body">
+                        <h5 class="card-title">Endereço</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="tag-lista">CEP</div>
+                            <p><span id="user-cep"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tag-lista">Complemento</div>
+                            <p><span id="user-complemento"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tag-lista">Numero</div>
+                            <p><span id="user-numero"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tag-lista">Rua</div>
+                            <p><span id="user-endereco"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tag-lista">Cidade</div>
+                            <p><span id="user-cidade"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tag-lista">Estado</div>
+                            <p><span id="user-estado"></span></p>
+                            <i class="far fa-edit"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/infoUser.js"></script>
+    <script src="/js/logout.js"></script>
+</body>
+
+</html>

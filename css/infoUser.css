@@ -10,6 +10,10 @@
     --branco:#fff ;
 }
 
+* {
+    overflow-x: hidden;
+}
+
 body h5 {
     overflow: hidden ;
 }
@@ -22,6 +26,7 @@ aside {
     background-color: var(--cor-padrao);
     color: var(--branco);
     position: fixed;
+    top: 0;
 
     
 }
@@ -63,6 +68,10 @@ aside {
     display: flex;
     justify-content: center;
 
+}
+
+.vet-sidebar {
+    background-color: #272727;
 }
 
 /*----  Conteudo ----*/
@@ -176,3 +185,5 @@ aside {
 .painel-pad{
 
 }
+
+/*--    --*/
