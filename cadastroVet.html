@@ -75,11 +75,12 @@
                     </label>
                     <label class="label-input">
                         <i class="fas fa-user-md"></i>
-                        <select id="especialidade" name="especialidade" required>
-                            <option value="" disabled selected>Escolha a especialidade</option>
-                        </select>
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check" id="especialidade" name="especialidade" autocomplete="off" required ></div>
+                        <label value="" disabled selected>Escolha a especialidade</label>
+
                     </label>
-                    
+
                     <script>
                         function formatarTelefone(input) {
                             // Remove qualquer caracter que não seja número
