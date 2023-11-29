@@ -1,4 +1,3 @@
-// Selecione o elemento select
 const selectEspecialidade = document.getElementById('especialidade');
 const url = 'http://localhost:4000/especializacao/'
 fetch(url, {
